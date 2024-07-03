@@ -200,18 +200,25 @@ int main()
         }
         else if (x == 5)
         {
-            int x;
-            cout << "Enter index at which value is to be Updated(0<=idx<n): ";
-            cin >> x;
-            if(x<0 || x>n){
-                cout<< "Invalid Index. Please Try Again"<<endl;
-                continue;
+            int idx;
+            while (true)
+            {
+                cout << "Enter index at which value is to be Updated(0<=idx<n): ";
+                cin >> idx;
+                if (idx < 0 || idx >= n)
+                {
+                    cout << "Invalid Index. Please Try Again" << endl;
+                }
+                else
+                {
+                    break;
+                }
             }
-            int l;
+            int val;
             cout << "Enter New value: ";
-            cin >> l;
-            arr[x] = l;
-            st.update(x, l);
+            cin >> val;
+            arr[idx] = val;
+            st.update(idx, val);
             cout << "Updated!!" << endl;
         }
         else if (x == 6)
